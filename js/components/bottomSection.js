@@ -1,7 +1,7 @@
 import getAPI from "../API/getAPI.js"
 import preLoad from "./preLoad.js"
 function insertData () {
-let gotData=false;
+let firstTime=true;
 
 function getTime(date) {
 let time=new Date(date);
@@ -46,20 +46,20 @@ function getGreeting() {
                 })
                     .catch(err=> console.log("got error while fetching data" + err));
 //geting time and date
-// if(firstTime) {
-//     getAPI("https://worldtimeapi.org/api/ip")
-//                 .then(res=>{
-//                     getTime(res.datetime);
-//                     getDay(res.day_of_week);
-//                     document.getElementById("timeZone").textContent="UTC" + res.utc_offset;
-//                     document.getElementById("yearday").textContent=res.day_of_year;
-//                     document.getElementById("weeknumber").textContent=res.week_number;
-//                     getGreeting();
-//                     firstTime=false;
-//                 })
-//                     .catch (err=>console.error("Got erro while fetching" + err));
+if(firstTime) {
+    getAPI("https://worldtimeapi.org/api/ip")
+                .then(res=>{
+                    getTime(res.datetime);
+                    getDay(res.day_of_week);
+                    document.getElementById("timeZone").textContent="UTC" + res.utc_offset;
+                    document.getElementById("yearday").textContent=res.day_of_year;
+                    document.getElementById("weeknumber").textContent=res.week_number;
+                    getGreeting();
+                    firstTime=false;
+                })
+                    .catch (err=>console.error("Got erro while fetching" + err));
         
-// }
+}
 
     setInterval(()=> {
         getAPI("https://worldtimeapi.org/api/ip")
@@ -71,10 +71,10 @@ function getGreeting() {
             document.getElementById("yearday").textContent=res.day_of_year;
             document.getElementById("weeknumber").textContent=res.week_number;
             getGreeting();
-            gotData=true;
+         
         })
             .catch (err=>console.error("Got erro while fetching" + err));
-    },4000)
+    },7000)
 
         
 }
