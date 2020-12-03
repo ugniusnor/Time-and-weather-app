@@ -1,0 +1,26 @@
+@media (max-width:1040px) {
+    h2{
+        font-size: 35px;
+    }
+
+}
+@media (max-width:850px) {
+    .main-section .main-container .info-area {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .text-area, .weather-area {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    #hours {
+        font-size: 120px;
+    } 
+    .bottom-section .bottom-container {
+        width: 100%;
+        height: 60%;
+
+    }
+    
+}

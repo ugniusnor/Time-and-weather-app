@@ -7,7 +7,7 @@
     
 };
 .main-section {
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
     height: 100vh;
    
     background-image: url(../img/day/1.jpg);
@@ -57,15 +57,18 @@
 
             }
             .button-seeMore {
-                background-color: rgba(248, 242, 242, 0.7);
+                background-color: rgba(61, 60, 60, 0.7);
                 width: 140px;
                 height:40px;
                 border-radius: 50px;
                 padding: 5px;
                 text-align: center;
+                @include flexCenter();
+                text-transform: uppercase;
                 cursor: pointer;
                 &:hover{
-                    background-color:  rgba(248, 242, 242, 1);
+                    background-color:  rgba(61, 60, 60, 1);
+                    
                 }
             }
         }
@@ -73,3 +76,4 @@
     }
 }
 }
+
